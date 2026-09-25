@@ -16,8 +16,8 @@ app.use(express.json({ limit: "2mb" }));
 app.use(express.static(path.join(__dirname, "public")));
 
 const GROQ_API_KEY = process.env.GROQ_API_KEY;
-// llama-3.3-70b-versatile est un bon compromis qualité/débit sur le tier gratuit Groq.
-const GROQ_MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
+// openai/gpt-oss-120b est un bon compromis qualité/débit sur le tier gratuit Groq.
+const GROQ_MODEL = process.env.GROQ_MODEL || "openai/gpt-oss-120b";
 
 // ---------- Base de données (Postgres) ----------
 const pool = new Pool({
